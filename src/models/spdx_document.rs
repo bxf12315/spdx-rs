@@ -310,6 +310,30 @@ mod test {
     }
 
     #[test]
+    fn test_rhel9(){
+        let spdx_file1: SPDX = serde_json::from_str(
+            &read_to_string("tests/data/MTR-1.2.json").unwrap(),
+        )
+            .unwrap();
+
+        let spdx_file2: SPDX = serde_json::from_str(
+            &read_to_string("tests/data/ubi9-sbom.json").unwrap(),
+        )
+            .unwrap();
+
+        let spdx_file3: SPDX = serde_json::from_str(
+            &read_to_string("tests/data/rhel-7.9.z.json").unwrap(),
+        )
+            .unwrap();
+
+        let spdx_file: SPDX = serde_json::from_str(
+            &read_to_string("tests/data/rhel-9.0.json").unwrap(),
+        )
+            .unwrap();
+
+    }
+
+
     fn get_unique_hashes_for_files() {
         let spdx_file: SPDX = serde_json::from_str(
             &read_to_string("tests/data/SPDXJSONExample-v2.2.spdx.json").unwrap(),
